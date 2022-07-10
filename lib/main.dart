@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:todo_list_provider/app/app_module.dart';
 import 'package:wakelock/wakelock.dart';
+
+import 'app/app_module.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
