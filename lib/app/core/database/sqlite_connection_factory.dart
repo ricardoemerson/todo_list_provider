@@ -66,7 +66,7 @@ class SqliteConnectionFactory {
     final migrations = SqliteMigrationFactory().getUpgradeMigration(oldVersion);
 
     for (final migration in migrations) {
-      migration.update(batch);
+      migration.upgrade(batch);
     }
 
     batch.commit();
