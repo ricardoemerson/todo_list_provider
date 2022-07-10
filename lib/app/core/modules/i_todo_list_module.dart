@@ -14,7 +14,7 @@ abstract class ITodoListModule {
         _bindings = bindings;
 
   Map<String, WidgetBuilder> get routers {
-    return routers.map(
+    return _routers.map(
       (key, pageBuilder) => MapEntry(
         key,
         (_) => TodoListPage(
