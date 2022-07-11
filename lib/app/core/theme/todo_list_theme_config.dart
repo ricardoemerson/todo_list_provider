@@ -11,6 +11,9 @@ class TodoListThemeConfig {
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             primary: const Color(0xff5C77CE),
+            textStyle: const TextStyle(
+              fontSize: 16,
+            ),
           ),
         ),
       );
