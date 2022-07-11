@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 
+import '../../../core/widgets/input_text.dart';
 import '../../../core/widgets/todo_list_logo.dart';
 
 class LoginPage extends StatelessWidget {
@@ -28,9 +29,14 @@ class LoginPage extends StatelessWidget {
                     child: Form(
                       child: Column(
                         children: [
-                          TextFormField(),
+                          InputText(
+                            label: 'e-Mail',
+                          ),
                           const SizedBox(height: 20),
-                          TextFormField(),
+                          InputText(
+                            label: 'Senha',
+                            obscureText: true,
+                          ),
                           const SizedBox(height: 10),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -43,7 +49,7 @@ class LoginPage extends StatelessWidget {
                                 onPressed: () {},
                                 style: ElevatedButton.styleFrom(
                                   shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(20),
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
                                 ),
                                 child: const Padding(
