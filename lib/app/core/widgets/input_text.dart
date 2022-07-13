@@ -7,6 +7,7 @@ class InputText extends StatelessWidget {
   final ValueNotifier<bool> showObscureText;
   final TextEditingController? controller;
   final FormFieldValidator<String>? validator;
+  final FocusNode? focusNode;
 
   InputText({
     Key? key,
@@ -15,6 +16,7 @@ class InputText extends StatelessWidget {
     this.obscureText = false,
     this.controller,
     this.validator,
+    this.focusNode,
   })  : assert(
           obscureText == true ? suffixIconButton == null : true,
           'obscureText não pode ser enviado em conjunto com suffixIconButton.',
@@ -30,6 +32,7 @@ class InputText extends StatelessWidget {
           return TextFormField(
             controller: controller,
             validator: validator,
+            focusNode: focusNode,
             decoration: InputDecoration(
               labelText: label,
               labelStyle: const TextStyle(
