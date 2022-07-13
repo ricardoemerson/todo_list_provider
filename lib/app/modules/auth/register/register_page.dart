@@ -34,7 +34,7 @@ class _RegisterPageState extends State<RegisterPage> {
       context: context,
       successCalback: (notifier, listenerInstance) {
         listenerInstance.dispose();
-        Navigator.pop(context);
+        Navigator.of(context).pop();
       },
     );
   }
@@ -55,7 +55,7 @@ class _RegisterPageState extends State<RegisterPage> {
         automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
         leading: IconButton(
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => Navigator.of(context).pop(),
           icon: ClipOval(
             child: Container(
               color: context.primaryColor.withAlpha(20),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../core/auth/auth_provider.dart';
+import 'widgets/home_drawer.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -12,6 +13,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('HomePage'),
       ),
+      drawer: const HomeDrawer(),
       body: Center(
         child: TextButton(
           onPressed: () {
