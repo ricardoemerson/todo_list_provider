@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/notifiers/default_change_notifier.dart';
-import '../../../exceptions/auth_exception.dart';
-import '../../../services/user/i_user_service.dart';
+import '../../../data/exceptions/auth_exception.dart';
+import '../../../data/services/user/i_user_service.dart';
 
 class LoginController extends DefaultChangeNotifier {
   final IUserService _userService;

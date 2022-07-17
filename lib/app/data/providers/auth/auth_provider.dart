@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 
+import '../../../core/navigator/todo_list_navigator.dart';
 import '../../services/user/i_user_service.dart';
-import '../navigator/todo_list_navigator.dart';
 
 class AuthProvider extends ChangeNotifier {
   final FirebaseAuth _firebaseAuth;

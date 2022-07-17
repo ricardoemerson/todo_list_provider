@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'app_widget.dart';
-import 'core/auth/auth_provider.dart';
 import 'core/database/sqlite_connection_factory.dart';
-import 'repositories/user/i_user_repository.dart';
-import 'repositories/user/user_repository.dart';
-import 'services/user/i_user_service.dart';
-import 'services/user/user_service.dart';
+import 'data/providers/auth/auth_provider.dart';
+import 'data/repositories/user/i_user_repository.dart';
+import 'data/repositories/user/user_repository.dart';
+import 'data/services/user/i_user_service.dart';
+import 'data/services/user/user_service.dart';
 
 class AppModule extends StatelessWidget {
   const AppModule({Key? key}) : super(key: key);

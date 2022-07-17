@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../core/auth/auth_provider.dart';
 import '../../../core/helpers/message.dart';
 import '../../../core/theme/theme_extension.dart';
-import '../../../services/user/i_user_service.dart';
+import '../../../data/providers/auth/auth_provider.dart';
+import '../../../data/services/user/i_user_service.dart';
 
 class HomeDrawer extends StatefulWidget {
   const HomeDrawer({Key? key}) : super(key: key);
