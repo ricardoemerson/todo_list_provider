@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../../core/theme/theme_extension.dart';
+import '../../../data/enums/task_filter_enum.dart';
+import '../../../data/models/total_tasks_model.dart';
+import '../home_controller.dart';
 import 'todo_card_filter.dart';
 
 class HomeFilters extends StatefulWidget {
@@ -25,13 +29,40 @@ class _HomeFiltersState extends State<HomeFilters> {
           scrollDirection: Axis.horizontal,
           physics: const BouncingScrollPhysics(),
           child: Row(
-            children: const [
-              TodoCardFilter(),
-              TodoCardFilter(),
-              TodoCardFilter(),
-              TodoCardFilter(),
-              TodoCardFilter(),
-              TodoCardFilter(),
+            children: [
+              TodoCardFilter(
+                label: 'HOJE',
+                taskFilter: TaskFilterEnum.today,
+                totalTasksModel: TotalTasksModel(
+                  totalTasks: 10,
+                  totalTasksFinish: 9,
+                ),
+                selected: context.select<HomeController, TaskFilterEnum>(
+                        (value) => value.selectedFilter) ==
+                    TaskFilterEnum.today,
+              ),
+              TodoCardFilter(
+                label: 'AMANHÃ',
+                taskFilter: TaskFilterEnum.tomorrow,
+                totalTasksModel: TotalTasksModel(
+                  totalTasks: 5,
+                  totalTasksFinish: 4,
+                ),
+                selected: context.select<HomeController, TaskFilterEnum>(
+                        (value) => value.selectedFilter) ==
+                    TaskFilterEnum.tomorrow,
+              ),
+              TodoCardFilter(
+                label: 'SEMANA',
+                taskFilter: TaskFilterEnum.week,
+                totalTasksModel: TotalTasksModel(
+                  totalTasks: 17,
+                  totalTasksFinish: 8,
+                ),
+                selected: context.select<HomeController, TaskFilterEnum>(
+                        (value) => value.selectedFilter) ==
+                    TaskFilterEnum.week,
+              ),
             ],
           ),
         ),
