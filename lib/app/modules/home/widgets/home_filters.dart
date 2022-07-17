@@ -33,9 +33,8 @@ class _HomeFiltersState extends State<HomeFilters> {
               TodoCardFilter(
                 label: 'HOJE',
                 taskFilter: TaskFilterEnum.today,
-                totalTasksModel: TotalTasksModel(
-                  totalTasks: 10,
-                  totalTasksFinish: 9,
+                totalTasksModel: context.select<HomeController, TotalTasksModel?>(
+                  (controller) => controller.todayTotalTasks,
                 ),
                 selected: context.select<HomeController, TaskFilterEnum>(
                         (value) => value.selectedFilter) ==
@@ -44,9 +43,8 @@ class _HomeFiltersState extends State<HomeFilters> {
               TodoCardFilter(
                 label: 'AMANHÃ',
                 taskFilter: TaskFilterEnum.tomorrow,
-                totalTasksModel: TotalTasksModel(
-                  totalTasks: 5,
-                  totalTasksFinish: 4,
+                totalTasksModel: context.select<HomeController, TotalTasksModel?>(
+                  (controller) => controller.tomorrowTotalTasks,
                 ),
                 selected: context.select<HomeController, TaskFilterEnum>(
                         (value) => value.selectedFilter) ==
@@ -55,9 +53,8 @@ class _HomeFiltersState extends State<HomeFilters> {
               TodoCardFilter(
                 label: 'SEMANA',
                 taskFilter: TaskFilterEnum.week,
-                totalTasksModel: TotalTasksModel(
-                  totalTasks: 17,
-                  totalTasksFinish: 8,
+                totalTasksModel: context.select<HomeController, TotalTasksModel?>(
+                  (controller) => controller.weekTotalTasks,
                 ),
                 selected: context.select<HomeController, TaskFilterEnum>(
                         (value) => value.selectedFilter) ==

@@ -33,6 +33,7 @@ class InputText extends StatelessWidget {
             controller: controller,
             validator: validator,
             focusNode: focusNode,
+            textCapitalization: TextCapitalization.sentences,
             decoration: InputDecoration(
               labelText: label,
               labelStyle: const TextStyle(
