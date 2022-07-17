@@ -42,4 +42,18 @@ class TaskRepository implements ITaskRepository {
 
     return result.map(TaskModel.fromMap).toList();
   }
+
+  @override
+  Future<void> checkOrUncheckTask(TaskModel taskModel) async {
+    final conn = await _sqliteConnectionFactory.openConnection();
+
+    await conn.rawUpdate('''
+      UPDATE todos SET
+        done = ?
+      WHERE id = ?
+    ''', [
+      taskModel.done ? 1 : 0,
+      taskModel.id,
+    ]);
+  }
 }

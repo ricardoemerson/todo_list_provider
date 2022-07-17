@@ -48,4 +48,8 @@ class TaskService implements ITaskService {
       tasks: tasks,
     );
   }
+
+  @override
+  Future<void> checkOrUncheckTask(TaskModel taskModel) =>
+      _taskRepository.checkOrUncheckTask(taskModel);
 }

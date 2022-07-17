@@ -18,6 +18,8 @@ class HomeController extends DefaultChangeNotifier {
   DateTime? initialDateOfWeek;
   DateTime? selectedDay;
 
+  bool showFinishedTasks = false;
+
   var selectedFilter = TaskFilterEnum.today;
 
   HomeController({
@@ -91,6 +93,10 @@ class HomeController extends DefaultChangeNotifier {
       selectedDay = null;
     }
 
+    if (!showFinishedTasks) {
+      filteredTasks = filteredTasks.where((task) => !task.done).toList();
+    }
+
     hideLoading();
     notifyListeners();
   }
@@ -108,5 +114,23 @@ class HomeController extends DefaultChangeNotifier {
     await loadTotalTasks();
 
     notifyListeners();
+  }
+
+  Future<void> checkOrUncheckTask(TaskModel taskModel) async {
+    showLoadingAndResetState();
+    notifyListeners();
+
+    final taskUpdated = taskModel.copyWith(done: !taskModel.done);
+
+    await _taskService.checkOrUncheckTask(taskUpdated);
+
+    hideLoading();
+    refreshPage();
+  }
+
+  void showOrHideFinishedTasks() {
+    showFinishedTasks = !showFinishedTasks;
+
+    refreshPage();
   }
 }
