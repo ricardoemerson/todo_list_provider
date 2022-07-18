@@ -20,16 +20,12 @@ class Task extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),
-        boxShadow: const [
-          BoxShadow(
-            color: Colors.grey,
-          ),
-        ],
+        border: Border.all(width: 2, color: Colors.grey.shade300),
       ),
       margin: const EdgeInsets.symmetric(vertical: 5),
       child: IntrinsicHeight(
         child: ListTile(
-          contentPadding: const EdgeInsets.all(8),
+          contentPadding: const EdgeInsets.only(top: 2, bottom: 8, left: 8, right: 8),
           leading: Checkbox(
             onChanged: (value) =>
                 context.read<HomeController>().checkOrUncheckTask(taskModel),
