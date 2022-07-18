@@ -25,14 +25,27 @@ class HomeTasks extends StatelessWidget {
               style: context.titleStyle,
             ),
           ),
-          Column(
-            children: context
-                .select<HomeController, List<TaskModel>>(
-                    (controller) => controller.filteredTasks)
-                .map((task) => Task(
-                      taskModel: task,
-                    ))
-                .toList(),
+          Visibility(
+            visible: context.select<HomeController, bool>(
+                (controller) => controller.filteredTasks.isNotEmpty),
+            replacement: Selector<HomeController, String>(
+              selector: (context, controller) {
+                return controller.tasksEmptyMessage;
+              },
+              builder: (_, value, __) => Text(
+                value,
+                style: context.titleStyle.copyWith(fontSize: 16),
+              ),
+            ),
+            child: Column(
+              children: context
+                  .select<HomeController, List<TaskModel>>(
+                      (controller) => controller.filteredTasks)
+                  .map((task) => Task(
+                        taskModel: task,
+                      ))
+                  .toList(),
+            ),
           ),
         ],
       ),

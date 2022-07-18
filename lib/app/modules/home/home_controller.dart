@@ -20,6 +20,8 @@ class HomeController extends DefaultChangeNotifier {
 
   bool showFinishedTasks = false;
 
+  String tasksEmptyMessage = '';
+
   var selectedFilter = TaskFilterEnum.today;
 
   HomeController({
@@ -66,9 +68,13 @@ class HomeController extends DefaultChangeNotifier {
       case TaskFilterEnum.today:
         tasks = await _taskService.getToday();
 
+        if (tasks.isEmpty) tasksEmptyMessage = 'Você não possui tarefas para HOJE!';
+
         break;
       case TaskFilterEnum.tomorrow:
         tasks = await _taskService.getTomorrow();
+
+        if (tasks.isEmpty) tasksEmptyMessage = 'Você não possui tarefas para AMANHÃ!';
 
         break;
       case TaskFilterEnum.week:
@@ -76,6 +82,8 @@ class HomeController extends DefaultChangeNotifier {
 
         tasks = weekModel.tasks;
         initialDateOfWeek = weekModel.startDate;
+
+        if (tasks.isEmpty) tasksEmptyMessage = 'Você não possui tarefas para SEMANA!';
 
         break;
     }
