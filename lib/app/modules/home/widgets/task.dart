@@ -32,9 +32,9 @@ class _TaskState extends State<Task> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          content: const Text(
-            'Deseja excluir a tarefa?',
-            style: TextStyle(
+          content: Text(
+            'Deseja excluir a tarefa (${task.description})?',
+            style: const TextStyle(
               fontSize: 16,
               height: 1.2,
             ),

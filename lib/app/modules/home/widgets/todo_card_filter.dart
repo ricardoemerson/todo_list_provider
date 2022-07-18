@@ -20,6 +20,9 @@ class TodoCardFilter extends StatelessWidget {
     required this.selected,
   }) : super(key: key);
 
+  int? get totalRemainTasks =>
+      totalTasksModel!.totalTasks - totalTasksModel!.totalTasksFinish;
+
   double _getPercentFinish() {
     final total = totalTasksModel?.totalTasks ?? 0;
     final totalFinish = totalTasksModel?.totalTasksFinish ?? 0.1;
@@ -51,7 +54,7 @@ class TodoCardFilter extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              '${totalTasksModel?.totalTasks ?? 0} TASKS',
+              '${totalRemainTasks ?? 0} TASKS',
               style: context.titleStyle.copyWith(
                 fontSize: 10,
                 color: selected ? Colors.white : Colors.grey,
