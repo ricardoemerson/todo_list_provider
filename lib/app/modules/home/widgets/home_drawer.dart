@@ -20,53 +20,54 @@ class _HomeDrawerState extends State<HomeDrawer> {
 
   Future<void> removeTasksAndLogout(BuildContext context) async {
     showDialog(
-        context: context,
-        builder: (BuildContext ctx) {
-          return AlertDialog(
-            title: const Text(
-              'Deseja sair',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
+      context: context,
+      builder: (BuildContext ctx) {
+        return AlertDialog(
+          title: const Text(
+            'Deseja sair',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
             ),
-            content: const Text(
-              'Deseja sair do Todo List e remover todas as suas tarefas registradas?',
-              style: TextStyle(
-                fontSize: 16,
-                height: 1.2,
-              ),
+          ),
+          content: const Text(
+            'Deseja sair do Todo List e remover todas as suas tarefas registradas?',
+            style: TextStyle(
+              fontSize: 16,
+              height: 1.2,
             ),
-            actions: [
-              TextButton(
-                onPressed: () async {
-                  await context.read<ITaskService>().removeAllTasks();
+          ),
+          actions: [
+            TextButton(
+              onPressed: () async {
+                await context.read<ITaskService>().removeAllTasks();
 
-                  if (!mounted) return;
-                  context.read<AuthProvider>().logout();
+                if (!mounted) return;
+                context.read<AuthProvider>().logout();
 
-                  Navigator.of(context).pop();
-                },
-                child: const Text(
-                  'SIM',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
+                Navigator.of(context).pop();
+              },
+              child: const Text(
+                'SIM',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-              TextButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: const Text(
-                  'NÃO',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text(
+                'NÃO',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
                 ),
-              )
-            ],
-          );
-        });
+              ),
+            )
+          ],
+        );
+      },
+    );
   }
 
   @override

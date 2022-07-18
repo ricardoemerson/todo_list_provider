@@ -54,5 +54,8 @@ class TaskService implements ITaskService {
       _taskRepository.checkOrUncheckTask(taskModel);
 
   @override
+  Future<void> removeById(int id) => _taskRepository.removeById(id);
+
+  @override
   Future<void> removeAllTasks() => _taskRepository.removeAllTasks();
 }

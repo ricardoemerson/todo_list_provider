@@ -3,16 +3,76 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 import '../../../data/models/task_model.dart';
+import '../../../data/services/task/i_task_service.dart';
 import '../home_controller.dart';
 
-class Task extends StatelessWidget {
+class Task extends StatefulWidget {
   final TaskModel taskModel;
-  final dateFormat = DateFormat('dd/MM/y');
 
-  Task({
+  const Task({
     Key? key,
     required this.taskModel,
   }) : super(key: key);
+
+  @override
+  State<Task> createState() => _TaskState();
+}
+
+class _TaskState extends State<Task> {
+  final dateFormat = DateFormat('dd/MM/y');
+
+  void _removeTask(BuildContext context, {required TaskModel task}) {
+    showDialog(
+      context: context,
+      builder: (BuildContext ctx) {
+        return AlertDialog(
+          title: const Text(
+            'Excluir tarefa',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          content: const Text(
+            'Deseja excluir a tarefa?',
+            style: TextStyle(
+              fontSize: 16,
+              height: 1.2,
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () async {
+                await context.read<ITaskService>().removeById(task.id);
+
+                if (!mounted) return;
+
+                context.read<HomeController>().refreshPage();
+
+                Navigator.of(context).pop();
+              },
+              child: const Text(
+                'SIM',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text(
+                'NÃO',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            )
+          ],
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,24 +88,33 @@ class Task extends StatelessWidget {
           contentPadding: const EdgeInsets.only(top: 2, bottom: 8, left: 8, right: 8),
           leading: Checkbox(
             onChanged: (value) =>
-                context.read<HomeController>().checkOrUncheckTask(taskModel),
-            value: taskModel.done,
+                context.read<HomeController>().checkOrUncheckTask(widget.taskModel),
+            value: widget.taskModel.done,
           ),
           title: Text(
-            taskModel.description,
+            widget.taskModel.description,
             style: TextStyle(
-              decoration: taskModel.done ? TextDecoration.lineThrough : null,
+              height: 1.2,
+              decoration: widget.taskModel.done ? TextDecoration.lineThrough : null,
             ),
           ),
           subtitle: Text(
-            dateFormat.format(taskModel.dateTime),
+            dateFormat.format(widget.taskModel.dateTime),
             style: TextStyle(
-              decoration: taskModel.done ? TextDecoration.lineThrough : null,
+              decoration: widget.taskModel.done ? TextDecoration.lineThrough : null,
             ),
           ),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
             side: const BorderSide(width: 2),
+          ),
+          trailing: IconButton(
+            onPressed: () => _removeTask(context, task: widget.taskModel),
+            icon: const Icon(
+              Icons.delete_forever,
+              color: Colors.red,
+              size: 28,
+            ),
           ),
         ),
       ),
