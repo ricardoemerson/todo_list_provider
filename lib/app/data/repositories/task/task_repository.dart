@@ -56,4 +56,11 @@ class TaskRepository implements ITaskRepository {
       taskModel.id,
     ]);
   }
+
+  @override
+  Future<void> removeAllTasks() async {
+    final conn = await _sqliteConnectionFactory.openConnection();
+
+    await conn.delete('todos');
+  }
 }

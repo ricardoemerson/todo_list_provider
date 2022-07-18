@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../../../core/helpers/message.dart';
 import '../../../core/theme/theme_extension.dart';
 import '../../../data/providers/auth/auth_provider.dart';
+import '../../../data/services/task/i_task_service.dart';
 import '../../../data/services/user/i_user_service.dart';
 
 class HomeDrawer extends StatefulWidget {
@@ -16,6 +17,57 @@ class HomeDrawer extends StatefulWidget {
 class _HomeDrawerState extends State<HomeDrawer> {
   final nameVN = ValueNotifier<String>('');
   final _nameFN = FocusNode();
+
+  Future<void> removeTasksAndLogout(BuildContext context) async {
+    showDialog(
+        context: context,
+        builder: (BuildContext ctx) {
+          return AlertDialog(
+            title: const Text(
+              'Deseja sair',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            content: const Text(
+              'Deseja sair do Todo List e remover todas as suas tarefas registradas?',
+              style: TextStyle(
+                fontSize: 16,
+                height: 1.2,
+              ),
+            ),
+            actions: [
+              TextButton(
+                onPressed: () async {
+                  await context.read<ITaskService>().removeAllTasks();
+
+                  if (!mounted) return;
+                  context.read<AuthProvider>().logout();
+
+                  Navigator.of(context).pop();
+                },
+                child: const Text(
+                  'SIM',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: const Text(
+                  'NÃO',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              )
+            ],
+          );
+        });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +155,9 @@ class _HomeDrawerState extends State<HomeDrawer> {
             title: const Text('Alterar Nome'),
           ),
           ListTile(
-            onTap: () => context.read<AuthProvider>().logout(),
+            onTap: () async {
+              await removeTasksAndLogout(context);
+            },
             title: const Text('Sair'),
           )
         ],
