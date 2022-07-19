@@ -93,6 +93,24 @@ Como pré-requisito para execução do projeto, será necessário que o Flutter 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
+## Packages utilizados
+
+✅ flutter_localizations:
+✅ provider: ^6.0.3
+✅ sqflite: ^2.0.3
+✅ wakelock: ^0.6.2
+✅ path: ^1.8.1
+✅ synchronized: ^3.0.0+2
+✅ google_fonts: ^3.0.1
+✅ flutter_signin_button: ^2.0.0
+✅ firebase_core: ^1.19.1
+✅ firebase_auth: ^3.4.1
+✅ validatorless: ^1.2.1
+✅ flutter_overlay_loader: ^2.0.0
+✅ google_sign_in: ^5.4.0
+✅ date_picker_timeline: ^1.2.3
+✅ intl: ^0.17.0
+✅ dart_date: ^1.1.1
 
 <!-- USAGE EXAMPLES -->
 ## Uso
