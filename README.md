@@ -30,9 +30,7 @@
 <!-- ABOUT THE PROJECT -->
 ## Sobre o projeto
 
-<img src="github-images/login.png" alt="Página de Login">
-<img src="github-images/registration.png" alt="Página de Registro do Usuário" >
-<img src="github-images/home-week-tasks.png" alt="Página principal comm tarefas da semana" >
+<img src="github-images/login.png" alt="Página de Login" width="300" height="auto">&nbsp;&nbsp;&nbsp;<img src="github-images/registration.png" alt="Página de Registro do Usuário"  width="300" height="auto">&nbsp;&nbsp;&nbsp;<img src="github-images/home-week-tasks.png" alt="Página principal comm tarefas da semana"  width="300" height="auto">
 <br/>
 <br/>
 
@@ -102,26 +100,21 @@ Como pré-requisito para execução do projeto, será necessário que o Flutter 
 O aplicativo permite o acesso através do cadastramento de usuário com e-mail e senha e também permite realizar a autenticação do usuário através da conta do Google.
 <br/>
 
-<img src="github-images/login.png" alt="Página de Login" >
-<img src="github-images/login-google.png" alt="Login com Google" >
-<img src="github-images/registration.png" alt="Página de Registro do Usuário" >
+<img src="github-images/login.png" alt="Página de Login" width="300" height="auto">&nbsp;&nbsp;&nbsp;<img src="github-images/login-google.png" alt="Login com Google" width="300" height="auto">&nbsp;&nbsp;&nbsp;<img src="github-images/registration.png" alt="Página de Registro do Usuário" width="300" height="auto">
 
 <br/>
 <br/>
 
 Ao acessar o aplicativo, serão exibidas as tarefas do Dia (Hoje) e também será possível visualizar as tafefas do dia seguinte (Amanhã) e da Semana.
 
-<img src="github-images/home-tasks.png" alt="Página principal com tarefas" >
-<img src="github-images/home-tomorrow-tasks.png" alt="Página principal com tarefas de amanhã" >
-<img src="github-images/home-week-tasks.png" alt="Página principal comm tarefas da semana" >
+<img src="github-images/home-tasks.png" alt="Página principal com tarefas" width="300" height="auto">&nbsp;&nbsp;&nbsp;<img src="github-images/home-tomorrow-tasks.png" alt="Página principal com tarefas de amanhã" width="300" height="auto">&nbsp;&nbsp;&nbsp;<img src="github-images/home-week-tasks.png" alt="Página principal comm tarefas da semana" width="300" height="auto">
 
 <br/>
 <br/>
 
 Caso não existam tarefas registradas o aplicativo apresentará uma mensagem informando.
 
-<img src="github-images/home-empty-tasks.png" alt="Página principal sem tarefas" >
-<img src="github-images/week-tasks-empty.png" alt="Página principal sem tarefas da semana" >
+<img src="github-images/home-empty-tasks.png" alt="Página principal sem tarefas" width="300" height="auto">&nbsp;&nbsp;&nbsp;<img src="github-images/week-tasks-empty.png" alt="Página principal sem tarefas da semana" width="300" height="auto">
 
 
 <br/>
@@ -129,23 +122,21 @@ Caso não existam tarefas registradas o aplicativo apresentará uma mensagem inf
 
 O usuário do sistema poderá a qualquer momento realizar a alteração do seu nome no aplicativo.
 
-<img src="github-images/change-name.png" alt="Alteração do nome do usuário" >
+<img src="github-images/change-name.png" alt="Alteração do nome do usuário" width="300" height="auto">
 
 <br/>
 <br/>
 
 O usuário poderá criar suas tarefas informando o nome da mesma e a data da programada, bem como realizar a exclusão de uma tarefa registrada.
 
-<img src="github-images/create-task-page.png" alt="Página de criação de tarefa" >
-<img src="github-images/select-date-task.png" alt="Selecionar data da tarefa" >
-<img src="github-images/remove-tasks.png" alt="Modal de confirmação de exclusão de uma tarefa" >
+<img src="github-images/create-task-page.png" alt="Página de criação de tarefa" width="300" height="auto">&nbsp;&nbsp;&nbsp;<img src="github-images/select-date-task.png" alt="Selecionar data da tarefa" width="300" height="auto">&nbsp;&nbsp;&nbsp;<img src="github-images/remove-tasks.png" alt="Modal de confirmação de exclusão de uma tarefa" width="300" height="auto">
 
 <br/>
 <br/>
 
 Também é possível através do Menu Popup de Filtragem exibir ou ocultar as tarefas já finalizadas.
 
-<img src="github-images/show-tasks-done.png" alt="Página principal com tarefas pendentes e concluídas" >
+<img src="github-images/show-tasks-done.png" alt="Página principal com tarefas pendentes e concluídas" width="300" height="auto">
 
 <br/>
 <br/>
