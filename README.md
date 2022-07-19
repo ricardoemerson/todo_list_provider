@@ -20,34 +20,17 @@
   </p>
 </div>
 
+![GitHub followers](https://img.shields.io/github/followers/ricardoemerson?style=social)
+![GitHub User's stars](https://img.shields.io/github/stars/ricardoemerson?style=social)
+![YouTube Channel Views](https://img.shields.io/youtube/channel/views/UC_UuIxnjQ5yLiT-UGSj774A?style=social)
+![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UC_UuIxnjQ5yLiT-UGSj774A?style=social)
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary><b>Tabela de conteúdo</b></summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">Sobre o projeto</a>
-      <ul>
-        <li><a href="#built-with">Construído com</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Iniciando</a>
-      <ul>
-        <li><a href="#prerequisites">Pré-requisitos</a></li>
-        <li><a href="#installation">Instalação</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Uso</a></li>
-    <li><a href="#contact">Contato</a></li>
-  </ol>
-</details>
 
 
 <!-- ABOUT THE PROJECT -->
 ## Sobre o projeto
 
-<img src="github-images/login.png" alt="Página de Login" >
+<img src="github-images/login.png" alt="Página de Login">
 <img src="github-images/registration.png" alt="Página de Registro do Usuário" >
 <img src="github-images/home-week-tasks.png" alt="Página principal comm tarefas da semana" >
 <br/>
